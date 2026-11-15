@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEX INTELLIGENCE | U.C.S.</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #08080d;
+      color: #eeeef5;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      padding: 24px;
+      border-bottom: 1px solid #292432;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand { font-weight: bold; letter-spacing: 3px; }
+    .brand span { color: #a78bfa; }
+    .tag { color: #a78bfa; font-size: 11px; letter-spacing: 2px; }
+    main { max-width: 1100px; margin: auto; padding: 28px 18px; }
+    h1 { font-size: clamp(28px, 5vw, 46px); margin-bottom: 8px; }
+    .sub { color: #92909f; margin-bottom: 28px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .panel {
+      background: #111119;
+      border: 1px solid #292432;
+      border-radius: 14px;
+      padding: 20px;
+    }
+    .panel h3 { margin-top: 0; font-size: 14px; color: #aaa5b8; }
+    .value { font-size: 27px; font-weight: bold; }
+    .muted { color: #858293; font-size: 12px; line-height: 1.6; }
+    .section { margin-top: 24px; }
+    button {
+      background: #a78bfa;
+      color: #100c1a;
+      border: 0;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover { background: #c4b5fd; }
+    .status { color: #fbbf24; font-size: 13px; }
+    footer {
+      color: #777384;
+      text-align: center;
+      padding: 35px 15px;
+      font-size: 11px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">U.C.S. <span>®</span></div>
+    <div class="tag">UNIVERSAL CONN’EX SQUAD</div>
+  </header>
+
+  <main>
+    <div class="tag">U.C.S. / INTELLIGENCE DIVISION</div>
+    <h1>DEX INTELLIGENCE</h1>
+    <p class="sub">Analyse, compréhension et suivi des marchés décentralisés.</p>
+
+    <div class="grid">
+      <div class="panel">
+        <h3>SCANNER</h3>
+        <div class="value">ACTIF</div>
+        <p class="muted">Les données du scanner seront connectées ici.</p>
+      </div>
+      <div class="panel">
+        <h3>CANDIDATS</h3>
+        <div class="value">—</div>
+        <p class="muted">Tokens repérés et suivis dans le temps.</p>
+      </div>
+      <div class="panel">
+        <h3>ASSISTANT IA</h3>
+        <div class="value">PRÊT</div>
+        <p class="muted">Un assistant pour expliquer les données et les risques.</p>
+      </div>
+    </div>
+
+    <div class="panel section">
+      <h3>ESPACE D'ANALYSE</h3>
+      <p class="status">EN ATTENTE DE CONNEXION AU SCANNER</p>
+      <p class="muted">Cette interface est une première maquette. Aucune donnée de marché réelle n'est encore connectée.</p>
+      <button onclick="alert('Le module sera activé lors de la prochaine étape.')">
+        OUVRIR L'ANALYSE
+      </button>
+    </div>
+  </main>
+
+  <footer>
+    U.C.S.® — DEX INTELLIGENCE · MODE LECTURE / SIMULATION
+  </footer>
+</body>
+</html>
