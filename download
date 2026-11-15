@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.env
+.env.*
+.env.example
+backend/data/
+scanner_config.json
+scanner_alerted.json
+scanner_suivi.json
+scanner_historique.csv

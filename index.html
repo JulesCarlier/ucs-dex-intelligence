@@ -1,105 +1,44 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DEX INTELLIGENCE | U.C.S.</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: #08080d;
-      color: #eeeef5;
-      font-family: Arial, sans-serif;
-    }
-    header {
-      padding: 24px;
-      border-bottom: 1px solid #292432;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .brand { font-weight: bold; letter-spacing: 3px; }
-    .brand span { color: #a78bfa; }
-    .tag { color: #a78bfa; font-size: 11px; letter-spacing: 2px; }
-    main { max-width: 1100px; margin: auto; padding: 28px 18px; }
-    h1 { font-size: clamp(28px, 5vw, 46px); margin-bottom: 8px; }
-    .sub { color: #92909f; margin-bottom: 28px; }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-    }
-    .panel {
-      background: #111119;
-      border: 1px solid #292432;
-      border-radius: 14px;
-      padding: 20px;
-    }
-    .panel h3 { margin-top: 0; font-size: 14px; color: #aaa5b8; }
-    .value { font-size: 27px; font-weight: bold; }
-    .muted { color: #858293; font-size: 12px; line-height: 1.6; }
-    .section { margin-top: 24px; }
-    button {
-      background: #a78bfa;
-      color: #100c1a;
-      border: 0;
-      padding: 12px 16px;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    button:hover { background: #c4b5fd; }
-    .status { color: #fbbf24; font-size: 13px; }
-    footer {
-      color: #777384;
-      text-align: center;
-      padding: 35px 15px;
-      font-size: 11px;
-    }
-  </style>
-</head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DEX INTELLIGENCE | U.C.S.</title>
+<style>
+:root{--bg:#08080d;--panel:#111119;--panel2:#171522;--line:#292536;--violet:#a78bfa;--text:#f1eff8;--muted:#918b9e;--green:#65d6a0;--red:#fa7777;--yellow:#f5c66b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif}header{height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:#0b0a11;border-bottom:1px solid var(--line)}.brand{font-weight:900;letter-spacing:3px}.brand span,.eyebrow{color:var(--violet)}.topnote{font-size:10px;letter-spacing:2px;color:var(--muted)}.layout{display:flex;min-height:calc(100vh - 68px)}nav{width:220px;padding:20px 12px;border-right:1px solid var(--line);flex-shrink:0}.navlabel{font-size:10px;color:var(--muted);letter-spacing:2px;padding:10px}.navbtn{display:block;width:100%;text-align:left;margin:4px 0;padding:13px;border-radius:8px;border:1px solid transparent;background:transparent;color:#aaa5b6;cursor:pointer}.navbtn.active,.navbtn:hover{background:#211b30;border-color:#44345e;color:white}main{width:100%;max-width:1350px;margin:auto;padding:28px}.page{display:none}.page.active{display:block}.eyebrow{font-size:10px;letter-spacing:3px;font-weight:bold}h1{font-size:30px;margin:9px 0}.sub{font-size:13px;color:var(--muted);margin:0 0 24px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:18px;margin-bottom:14px}.panel h3{font-size:11px;color:#aaa5b8;letter-spacing:1px;margin:0 0 14px}.metric{font-size:24px;font-weight:800}.small{font-size:11px;color:var(--muted);line-height:1.6;margin-top:8px}.green{color:var(--green)}.yellow{color:var(--yellow)}.red{color:var(--red)}.tag{font-size:10px;color:var(--violet);background:#292238;padding:5px 8px;border-radius:5px}.rowhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}.rowhead h2{font-size:17px;margin:0}.btn{border:0;background:var(--violet);color:#100d18;border-radius:7px;padding:10px 13px;font-weight:bold;cursor:pointer}.btn.secondary{background:#211d2b;border:1px solid var(--line);color:#ddd}.btn:disabled{opacity:.5;cursor:not-allowed}input,textarea,select{background:#0b0a11;border:1px solid var(--line);border-radius:8px;color:white;padding:11px;width:100%;outline:none}table{width:100%;border-collapse:collapse;font-size:12px;min-width:650px}th,td{text-align:left;padding:12px 9px;border-bottom:1px solid #24212e}th{color:var(--muted);font-weight:normal}.tablewrap{overflow-x:auto}.notice{font-size:11px;color:var(--yellow);line-height:1.6}.statusdot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--yellow);margin-right:6px}.formrow{display:grid;grid-template-columns:1fr auto;gap:9px}.chatlog{height:300px;overflow:auto;margin:12px 0;padding:5px}.bubble{background:#1b1725;border-radius:10px;padding:12px 14px;margin:9px 0;max-width:90%;font-size:13px;line-height:1.6;white-space:pre-wrap}.bubble.user{background:#33264c;margin-left:auto}.detailgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.detail{background:#0b0a11;border:1px solid var(--line);border-radius:8px;padding:11px}.detail b{display:block;font-size:14px;margin-top:5px}.empty{padding:22px;text-align:center;color:var(--muted);font-size:12px}footer{text-align:center;color:#625e6d;font-size:10px;padding:30px 10px}
+@media(max-width:850px){.layout{display:block}nav{width:100%;display:flex;overflow:auto;padding:7px;border-right:0;border-bottom:1px solid var(--line)}.navlabel{display:none}.navbtn{width:auto;white-space:nowrap;flex-shrink:0;margin:2px}main{padding:20px 13px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.topnote{display:none}}
+@media(max-width:480px){.grid,.detailgrid{grid-template-columns:1fr}h1{font-size:25px}header{padding:0 15px}}
+</style></head>
 <body>
-  <header>
-    <div class="brand">U.C.S. <span>®</span></div>
-    <div class="tag">UNIVERSAL CONN’EX SQUAD</div>
-  </header>
-
-  <main>
-    <div class="tag">U.C.S. / INTELLIGENCE DIVISION</div>
-    <h1>DEX INTELLIGENCE</h1>
-    <p class="sub">Analyse, compréhension et suivi des marchés décentralisés.</p>
-
-    <div class="grid">
-      <div class="panel">
-        <h3>SCANNER</h3>
-        <div class="value">ACTIF</div>
-        <p class="muted">Les données du scanner seront connectées ici.</p>
-      </div>
-      <div class="panel">
-        <h3>CANDIDATS</h3>
-        <div class="value">—</div>
-        <p class="muted">Tokens repérés et suivis dans le temps.</p>
-      </div>
-      <div class="panel">
-        <h3>ASSISTANT IA</h3>
-        <div class="value">PRÊT</div>
-        <p class="muted">Un assistant pour expliquer les données et les risques.</p>
-      </div>
-    </div>
-
-    <div class="panel section">
-      <h3>ESPACE D'ANALYSE</h3>
-      <p class="status">EN ATTENTE DE CONNEXION AU SCANNER</p>
-      <p class="muted">Cette interface est une première maquette. Aucune donnée de marché réelle n'est encore connectée.</p>
-      <button onclick="alert('Le module sera activé lors de la prochaine étape.')">
-        OUVRIR L'ANALYSE
-      </button>
-    </div>
-  </main>
-
-  <footer>
-    U.C.S.® — DEX INTELLIGENCE · MODE LECTURE / SIMULATION
-  </footer>
-</body>
-</html>
+<header><div class="brand">U.C.S. <span>®</span></div><div class="topnote">UNIVERSAL CONN’EX SQUAD · INTELLIGENCE DIVISION</div></header>
+<div class="layout"><nav><div class="navlabel">ESPACE DE TRAVAIL</div>
+<button class="navbtn active" data-page="dashboard">◈ Tableau de bord</button><button class="navbtn" data-page="scanner">⌕ Scanner</button><button class="navbtn" data-page="candidates">◎ Candidats</button><button class="navbtn" data-page="assistant">✧ Assistant</button><button class="navbtn" data-page="simulation">◷ Simulation</button><button class="navbtn" data-page="settings">⚙ Connexion</button>
+</nav><main>
+<section class="page active" id="dashboard"><div class="eyebrow">U.C.S. / INTELLIGENCE DIVISION</div><h1>DEX INTELLIGENCE</h1><p class="sub">Analyse, compréhension et suivi des marchés décentralisés.</p>
+<div class="grid"><div class="panel"><h3>API</h3><div class="metric yellow" id="apiState">NON CONFIGURÉE</div><div class="small">Connexion au serveur</div></div><div class="panel"><h3>SCANNER</h3><div class="metric yellow" id="scannerState">EN ATTENTE</div><div class="small">Dernière donnée reçue</div></div><div class="panel"><h3>CANDIDATS</h3><div class="metric" id="candidateCount">0</div><div class="small">Candidats enregistrés</div></div><div class="panel"><h3>SIMULATIONS OUVERTES</h3><div class="metric" id="openPositions">0</div><div class="small">Positions virtuelles</div></div></div>
+<div class="panel"><div class="rowhead"><h2>Derniers candidats</h2><span class="tag">DONNÉES SERVEUR</span></div><div class="tablewrap"><table><thead><tr><th>TOKEN</th><th>SCORE</th><th>CONFIRMATION</th><th>ÉVOLUTION</th><th>DÉCISION</th></tr></thead><tbody id="recentRows"><tr><td colspan="5" class="empty">Configure l'API pour afficher tes données.</td></tr></tbody></table></div><p class="notice">Affichage en lecture seule. Les données ne sont jamais présentées comme réelles si le scanner ne les a pas transmises.</p></div></section>
+<section class="page" id="scanner"><div class="eyebrow">MODULE 01</div><h1>Scanner</h1><p class="sub">Détections transmises par ton scanner Python.</p><div class="panel"><div class="rowhead"><h2>État du flux</h2><span class="tag" id="feedState">EN ATTENTE</span></div><div class="detailgrid"><div class="detail">Intervalle configuré<b>60 secondes</b></div><div class="detail">Source<b>DEX Screener</b></div><div class="detail">Transmission<b>API sécurisée</b></div></div><p class="small">Le scanner conserve ses alertes Telegram et transmet les détections et les points de suivi à l'API lorsque les deux variables de connexion sont configurées.</p></div><div class="panel"><h3>DERNIÈRES DÉTECTIONS</h3><div class="tablewrap"><table><thead><tr><th>TOKEN</th><th>RÉSEAU</th><th>LIQUIDITÉ</th><th>VOLUME 24H</th><th>SCORE</th><th>STATUT</th></tr></thead><tbody id="scannerRows"><tr><td colspan="6" class="empty">Aucune détection reçue.</td></tr></tbody></table></div></div></section>
+<section class="page" id="candidates"><div class="eyebrow">MODULE 02</div><h1>Candidats</h1><p class="sub">Historique et suivi des points de contrôle.</p><div class="panel"><div class="rowhead"><h2>Base des candidats</h2><button class="btn secondary" id="refreshCandidates">Actualiser</button></div><div class="tablewrap"><table><thead><tr><th>TOKEN</th><th>QUALITÉ</th><th>CONFIRMATION</th><th>ÉVOLUTION</th><th>DERNIER PRIX</th><th>SUIVI</th></tr></thead><tbody id="candidateRows"><tr><td colspan="6" class="empty">Aucun candidat enregistré.</td></tr></tbody></table></div><p class="small">Les indicateurs sont séparés : le score qualité ne suffit jamais à confirmer un candidat. La confirmation exige deux contrôles conformes consécutifs : achats &gt; 55 %, variation 5 min entre 0 et +8 %, liquidité &gt; 20 000 $.</p></div><div class="panel" id="candidateDetails"><h3>DÉTAIL DU CANDIDAT</h3><div class="empty">Sélectionne un candidat pour afficher ses instantanés à 5 min, 15 min, 1 h et 24 h.</div></div></section>
+<section class="page" id="assistant"><div class="eyebrow">MODULE 03</div><h1>Assistant</h1><p class="sub">Aide pédagogique pour interpréter les critères, les données et les risques.</p><div class="panel"><div class="rowhead"><h2>Conversation</h2><span class="tag">ASSISTANT DE BASE</span></div><div class="chatlog" id="chatLog"><div class="bubble">Bonjour. Je peux expliquer le score, la confirmation, les indicateurs suivis et le fonctionnement de la simulation. L'IA générative n'est pas encore configurée.</div></div><div class="formrow"><input id="chatInput" placeholder="Pose une question sur les analyses…"><button class="btn" id="sendChat">Envoyer</button></div><p class="small">Les réponses actuelles sont explicatives et prédéfinies. Une connexion IA sécurisée sera nécessaire pour une véritable conversation générative.</p></div></section>
+<section class="page" id="simulation"><div class="eyebrow">MODULE 04</div><h1>Simulation</h1><p class="sub">Portefeuille virtuel uniquement, sans connexion à un portefeuille crypto.</p><div class="panel"><div class="rowhead"><h2>Positions virtuelles</h2><span class="tag">AUCUN ORDRE RÉEL</span></div><div class="tablewrap"><table><thead><tr><th>TOKEN</th><th>MONTANT VIRTUEL</th><th>PRIX D'ENTRÉE</th><th>PRIX ACTUEL</th><th>RÉSULTAT</th><th>ÉTAT</th><th>ACTION</th></tr></thead><tbody id="simulationRows"><tr><td colspan="7" class="empty">Aucune simulation enregistrée.</td></tr></tbody></table></div></div><div class="panel"><h3>CRÉER UNE SIMULATION</h3><label class="small" for="simCandidate">Candidat</label><select id="simCandidate"><option value="">Charge les candidats via l'API</option></select><label class="small" for="simAmount">Montant fictif en USD</label><input id="simAmount" type="number" min="1" max="1000000" value="100"><button class="btn" id="openSimulation" style="margin-top:12px">Créer une position virtuelle</button><p class="notice">Les montants sont fictifs et servent uniquement à mesurer des scénarios. Aucune transaction n'est exécutée.</p></div></section>
+<section class="page" id="settings"><div class="eyebrow">CONFIGURATION</div><h1>Connexion serveur</h1><p class="sub">Adresse de l'API backend. Aucun secret d'ingestion ne doit être saisi ici.</p><div class="panel"><h3>URL DE L'API</h3><input id="apiUrl" placeholder="https://adresse-de-ton-api"><p class="small">Cette adresse sera fournie après le déploiement du backend. Ne mets pas ici ton token Telegram ni ta clé d'ingestion.</p><button class="btn" id="saveApi" style="margin-top:12px">Enregistrer l'adresse</button> <button class="btn secondary" id="testApi">Tester la connexion</button><p id="apiMessage" class="small"></p></div></section>
+<footer>U.C.S.® — DEX INTELLIGENCE · LECTURE / ANALYSE / SIMULATION</footer>
+</main></div>
+<script>
+const $=id=>document.getElementById(id);let candidates=[];let apiBase=localStorage.getItem('dexi_api_base')||'';
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function money(v){return v==null?'—':'$'+Number(v).toLocaleString('en-US',{maximumFractionDigits:8});}
+function setPage(id){document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.page===id));document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));}
+document.querySelectorAll('.navbtn').forEach(b=>b.addEventListener('click',()=>setPage(b.dataset.page)));
+async function api(path,opts={}){if(!apiBase)throw new Error('URL de l’API non configurée');const r=await fetch(apiBase+path,{...opts,headers:{'Content-Type':'application/json',...(opts.headers||{})}});if(!r.ok){let d={};try{d=await r.json()}catch{}throw new Error(d.detail||('HTTP '+r.status));}return r.json();}
+function candidateRow(c){return `<tr><td><b>${esc(c.symbol||c.name)}</b><div class="small">${esc(c.chain)}</div></td><td>${c.latest_score??'—'}/100</td><td>${esc(c.confirmation?.status||'EN ATTENTE')}</td><td>${esc(c.evolution||'—')}</td><td>${money(c.latest_price)}</td><td><button class="btn secondary" data-detail="${esc(c.id)}">Voir</button></td></tr>`;}
+async function refresh(){if(!apiBase)return;try{const [s,cs,sim]=await Promise.all([api('/api/status'),api('/api/candidates'),api('/api/simulation')]);candidates=cs.items||[];$('apiState').textContent='EN LIGNE';$('apiState').className='metric green';$('scannerState').textContent=s.scanner;$('scannerState').className='metric '+(s.last_update?'green':'yellow');$('candidateCount').textContent=s.candidate_count;$('openPositions').textContent=s.open_virtual_positions;$('feedState').textContent=s.scanner;$('recentRows').innerHTML=candidates.slice(0,6).map(candidateRow).join('')||'<tr><td colspan="5" class="empty">Aucun candidat reçu.</td></tr>';$('candidateRows').innerHTML=candidates.map(candidateRow).join('')||'<tr><td colspan="6" class="empty">Aucun candidat reçu.</td></tr>';$('scannerRows').innerHTML=candidates.slice(0,20).map(c=>`<tr><td>${esc(c.symbol)}</td><td>${esc(c.chain)}</td><td>${money(c.latest_metrics?.liquidity)}</td><td>${money(c.latest_metrics?.volume)}</td><td>${c.latest_score}/100</td><td>${esc(c.latest_decision)}</td></tr>`).join('')||'<tr><td colspan="6" class="empty">Aucune détection reçue.</td></tr>';$('simCandidate').innerHTML='<option value="">Choisir un candidat</option>'+candidates.map(c=>`<option value="${esc(c.id)}">${esc(c.symbol)} · ${esc(c.chain)}</option>`).join('');$('simulationRows').innerHTML=(sim.items||[]).map(p=>`<tr><td>${esc(p.symbol)}</td><td>${money(p.amount_usd)}</td><td>${money(p.entry_price)}</td><td>${money(p.current_price)}</td><td class="${p.pnl_usd>=0?'green':'red'}">${money(p.pnl_usd)} (${Number(p.pnl_percent).toFixed(2)}%)</td><td>${esc(p.status)}</td><td>${p.status==='OPEN'?`<button class="btn secondary" data-close="${p.id}">Clôturer virtuellement</button>`:'—'}</td></tr>`).join('')||'<tr><td colspan="7" class="empty">Aucune simulation.</td></tr>';}
+catch(e){$('apiState').textContent='ERREUR';$('apiState').className='metric red';$('apiMessage').textContent=e.message;}}
+async function showCandidate(id){try{const c=await api('/api/candidates/'+encodeURIComponent(id));$('candidateDetails').innerHTML=`<h3>${esc(c.name)} (${esc(c.symbol)})</h3><div class="detailgrid"><div class="detail">Qualité<b>${c.latest_score}/100</b></div><div class="detail">Confirmation<b>${esc(c.confirmation.status)}</b></div><div class="detail">Évolution<b>${esc(c.evolution)}</b></div></div><p class="small">${esc(c.latest_decision)} · ${esc(c.url||'')}</p><h3>HISTORIQUE DES CONTRÔLES</h3><div class="tablewrap"><table><thead><tr><th>ÉTAPE</th><th>DATE</th><th>PRIX</th><th>SCORE</th><th>ACHATS</th><th>LIQUIDITÉ</th><th>VAR. 5M</th></tr></thead><tbody>${(c.snapshots||[]).map(s=>`<tr><td>${esc(s.label)}</td><td>${new Date(s.observed_at*1000).toLocaleString('fr-FR')}</td><td>${money(s.price_usd)}</td><td>${s.score}/100</td><td>${Number(s.metrics.buy_ratio||0).toFixed(1)}%</td><td>${money(s.metrics.liquidity)}</td><td>${Number(s.metrics.change_5m||0).toFixed(2)}%</td></tr>`).join('')}</tbody></table></div>`;}catch(e){$('candidateDetails').innerHTML=`<p class="notice">${esc(e.message)}</p>`;}}
+document.addEventListener('click',e=>{const d=e.target.dataset.detail;if(d)showCandidate(d);const c=e.target.dataset.close;if(c)api('/api/simulation/'+c+'/close',{method:'POST'}).then(refresh).catch(alert);});
+$('refreshCandidates').onclick=refresh;$('apiUrl').value=apiBase;$('saveApi').onclick=()=>{apiBase=$('apiUrl').value.trim().replace(/\/$/,'');localStorage.setItem('dexi_api_base',apiBase);$('apiMessage').textContent='Adresse enregistrée dans ce navigateur.';refresh();};$('testApi').onclick=async()=>{try{const r=await api('/health');$('apiMessage').textContent='Connexion réussie : '+r.status;refresh();}catch(e){$('apiMessage').textContent='Échec : '+e.message;}};
+$('sendChat').onclick=async()=>{const q=$('chatInput').value.trim();if(!q)return;const log=$('chatLog');log.insertAdjacentHTML('beforeend',`<div class="bubble user">${esc(q)}</div>`);$('chatInput').value='';try{const r=await api('/api/chat',{method:'POST',body:JSON.stringify({question:q})});log.insertAdjacentHTML('beforeend',`<div class="bubble">${esc(r.answer)}<div class="small">${esc(r.engine)}</div></div>`);}catch(e){log.insertAdjacentHTML('beforeend',`<div class="bubble">${esc(e.message)}</div>`);}log.scrollTop=log.scrollHeight;};
+$('chatInput').addEventListener('keydown',e=>{if(e.key==='Enter')$('sendChat').click();});
+$('openSimulation').onclick=async()=>{const id=$('simCandidate').value,amount=Number($('simAmount').value);if(!id||!amount){alert('Choisis un candidat et un montant fictif valide.');return;}try{await api('/api/simulation/open',{method:'POST',body:JSON.stringify({candidate_id:id,amount_usd:amount})});await refresh();alert('Simulation virtuelle créée. Aucun ordre réel envoyé.');}catch(e){alert(e.message);}};
+if(apiBase)refresh();setInterval(()=>{if(apiBase)refresh();},30000);
+</script></body></html>
